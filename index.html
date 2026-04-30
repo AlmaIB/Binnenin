@@ -31,18 +31,21 @@
 
         .nav-right {
             text-align: right;
+            align-items: flex-end; /* Zorgt dat de hover-lijn rechts uitlijnt */
         }
 
-        /* Styling voor het woord 'over' en zijn hover */
+        /* Styling voor 'over' met een lijntje dat precies even breed is */
         .over-link {
             cursor: pointer;
-            text-decoration: none; /* Standaard geen lijn */
-            border-bottom: 1px solid transparent; /* Bereidt de dunne lijn voor */
-            transition: border-color 0.3s ease; /* Zorgt voor een subtiele overgang */
+            text-decoration: none;
+            display: inline-block; /* Cruciaal: zorgt dat de border de tekstlengte volgt */
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s ease;
+            line-height: 1.2; /* Houdt het lijntje dicht bij de tekst */
         }
 
         .over-link:hover {
-            border-bottom-color: #000; /* Dunne zwarte lijn bij hover */
+            border-bottom-color: #000;
         }
 
         main {
@@ -56,13 +59,12 @@
         }
 
         main img {
-            width: 450px; /* Desktop maat */
+            width: 450px;
             max-width: 100%;
             height: auto;
             display: block;
         }
 
-        /* Styling voor de button en zijn hover */
         .download-btn {
             margin-top: 26px; 
             padding: 10px 25px;
@@ -71,12 +73,12 @@
             color: #000;
             display: inline-block;
             background-color: white;
-            transition: background-color 0.3s ease, color 0.3s ease; /* Zorgt voor een subtiele overgang */
+            transition: background-color 0.3s ease, color 0.3s ease;
         }
 
         .download-btn:hover {
-            background-color: black; /* Button wordt zwart bij hover */
-            color: white; /* Letters worden wit bij hover */
+            background-color: black;
+            color: white;
         }
 
         /* Popup styling */
@@ -119,18 +121,13 @@
                 align-items: flex-end;
             }
 
-            .nav-right div, .nav-right .over-link {
-                text-align: right !important;
-                width: auto;
-            }
-
             main {
                 padding-top: 0px; 
                 justify-content: center;
             }
 
             main img {
-                width: 90%; /* Mobiele maat */
+                width: 90%;
                 max-width: 90%;
                 margin: 5px 0 15px 0; 
             }
@@ -146,7 +143,8 @@
 
     <nav>
         <div class="nav-left">
-            <div class="novel-titel">binnenin,</div> <!-- Komma in dezelfde div zodat de dikte hetzelfde is -->
+            <!-- De komma zit hier direct achter de tekst in de div voor gelijke dikte -->
+            <div class="novel-titel">binnenin,</div> 
             <div class="subtitle">over angst bij jongvolwassenen</div>
         </div>
         <div class="nav-right">
