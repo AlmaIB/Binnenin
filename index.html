@@ -15,6 +15,8 @@
             min-height: 100vh;
             box-sizing: border-box;
             background-color: #fff;
+            /* Zwarte cursor toevoegen */
+            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M0 0l16 11-7 1.5L13 19l-3 1.5-4-6.5-3 3V0z" fill="black"/></svg>'), auto;
         }
 
         nav {
@@ -36,7 +38,7 @@
         }
 
         .over-link {
-            cursor: pointer;
+            cursor: pointer; /* Behoud het handje voor klikbare items */
             text-decoration: none;
             display: inline-block;
             border-bottom: 1px solid transparent;
@@ -66,7 +68,7 @@
         }
 
         .download-btn {
-            margin-top: 40px; /* Desktop afstand blijft gelijk */
+            margin-top: 40px; 
             padding: 10px 25px;
             border: 1px solid #000;
             text-decoration: none;
@@ -74,6 +76,7 @@
             display: inline-block;
             background-color: white;
             transition: background-color 0.3s ease, color 0.3s ease;
+            cursor: pointer;
         }
 
         .download-btn:hover {
@@ -111,10 +114,11 @@
             font-size: 24px;
         }
 
-        /* --- SPECIFIEKE AANPASSINGEN VOOR MOBIEL --- */
+        /* Mobiele aanpassingen */
         @media (max-width: 600px) {
             body {
                 padding: 15px;
+                cursor: auto; /* Op mobiel is een aangepaste cursor niet nodig/mogelijk */
             }
 
             .nav-right {
@@ -134,7 +138,7 @@
             }
 
             .download-btn {
-                margin-top: 45px; /* De button op mobiel een stukje naar beneden geschoven */
+                margin-top: 45px;
                 margin-bottom: 30px;
             }
         }
