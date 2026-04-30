@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="nl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>binnenin - alma borkes</title>
+    <!-- Inladen van het Courier Prime font -->
+    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400&display=swap" rel="stylesheet">
+    
+    <style>
+        body {
+            margin: 0;
+            padding: 0;
+            font-family: 'Courier Prime', monospace;
+            background-color: white;
+            color: black;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            text-transform: lowercase; 
+        }
+
+        /* Navigatie */
+        nav {
+            width: 100%;
+            padding: 30px;
+            display: flex;
+            justify-content: space-between;
+            box-sizing: border-box;
+            position: absolute;
+            top: 0;
+            font-size: 1.1rem;
+            z-index: 10;
+        }
+
+        .nav-left {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-start;
+        }
+
+        .subtitle {
+            /* Zelfde grootte als de rest van de nav */
+            font-size: 1.1rem; 
+            margin-top: 5px;
+        }
+
+        .nav-right {
+            display: flex;
+            flex-direction: column;
+            align-items: flex-end;
+        }
+
+        .over-link {
+            cursor: pointer;
+            text-decoration: none;
+            color: black;
+            margin-top: 5px;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.3s;
+        }
+
+        .over-link:hover {
+            border-bottom: 1px solid black;
+        }
+
+        /* Midden van de pagina */
+        main {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: flex-start; 
+            flex-grow: 1;
+            width: 100%;
+            text-align: center;
+        }
+
+        img {
+            max-width: 450px; 
+            height: auto;
+            margin-top: 140px; 
+            margin-bottom: 60px;
+        }
+
+        /* De Button */
+        .download-btn {
+            padding: 12px 30px;
+            font-size: 1rem;
+            font-family: 'Courier Prime', monospace;
+            text-decoration: none;
+            color: black;
+            background-color: white;
+            border: 1px solid black;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            margin-bottom: 60px;
+            text-transform: lowercase;
+        }
+
+        .download-btn:hover {
+            background-color: black;
+            color: white;
+        }
+
+        /* Popup Styling */
+        #popup-overlay {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(255, 255, 255, 0.95);
+            z-index: 100;
+            justify-content: center;
+            align-items: center;
+        }
+
+        .popup-content {
+            background-color: white;
+            padding: 60px;
+            border: 1px solid black;
+            max-width: 600px; 
+            width: 80%;
+            position: relative;
+            text-align: left;
+            line-height: 1.6;
+            text-transform: none; 
+        }
+
+        .close-btn {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            cursor: pointer;
+            font-size: 1.5rem;
+        }
+    </style>
+</head>
+<body>
+
+    <nav>
+        <div class="nav-left">
+            <div class="novel-titel">binnenin</div>
+            <div class="subtitle">over angst bij jongvolwassenen</div>
+        </div>
+        <div class="nav-right">
+            <div>alma borkes</div>
+            <div class="over-link" onclick="openPopup()">over</div>
+        </div>
+    </nav>
+
+    <main>
+        <img src="LandingpaginaBinnenin.png" alt="cover">
+        <a href="_binnenin_.pdf" class="download-btn" download>kijk binnenin</a>
+    </main>
+
+    <div id="popup-overlay">
+        <div class="popup-content">
+            <span class="close-btn" onclick="closePopup()">&times;</span>
+            <p>
+                Wat begon als doel voor mijn minor om Procreate te leren, is uitgegroeid tot <strong>'binnenin'</strong>: een werk waarin jongvolwassenen die veel te kampen hebben met angst centraal staan. Ik heb bewust gekozen voor dit thema, omdat ik hier zelf veel mee te maken heb (gehad). Door gesprekken met vrienden ontdekte ik dat dit een onderwerp is dat sterk leeft.<br><br>
+                Iedereen heeft angsten; dat is menselijk. Maar het kan zwaar wegen om in een levensfase waarin van je wordt verwacht dat je alles uitzoekt, tegelijkertijd met deze angsten te worstelen. Dit verwachtingspatroon maakt het vaak moeilijker om gevoelens bespreekbaar te maken. De uitdaging was om deze gesprekken te vertalen naar een middel voor (h)erkenning. Ik wil je graag meenemen in hun verhalen: neem maar een kijkje <strong>binnenin</strong>.
+            </p>
+        </div>
+    </div>
+
+    <script>
+        function openPopup() {
+            document.getElementById('popup-overlay').style.display = 'flex';
+        }
+
+        function closePopup() {
+            document.getElementById('popup-overlay').style.display = 'none';
+        }
+
+        window.onclick = function(event) {
+            let overlay = document.getElementById('popup-overlay');
+            if (event.target == overlay) {
+                closePopup();
+            }
+        }
+    </script>
+
+</body>
+</html>
