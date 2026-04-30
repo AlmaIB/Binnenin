@@ -22,7 +22,6 @@
             justify-content: space-between;
             align-items: flex-start;
             width: 100%;
-            /* Forceert normale dikte voor alle tekst in de nav, inclusief de komma */
             font-weight: normal; 
         }
 
@@ -67,7 +66,7 @@
         }
 
         .download-btn {
-            margin-top: 40px; 
+            margin-top: 40px; /* Desktop afstand blijft gelijk */
             padding: 10px 25px;
             border: 1px solid #000;
             text-decoration: none;
@@ -112,7 +111,7 @@
             font-size: 24px;
         }
 
-        /* Mobiele aanpassingen */
+        /* --- SPECIFIEKE AANPASSINGEN VOOR MOBIEL --- */
         @media (max-width: 600px) {
             body {
                 padding: 15px;
@@ -135,7 +134,7 @@
             }
 
             .download-btn {
-                margin-top: 15px;
+                margin-top: 45px; /* De button op mobiel een stukje naar beneden geschoven */
                 margin-bottom: 30px;
             }
         }
