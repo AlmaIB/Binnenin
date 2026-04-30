@@ -65,7 +65,6 @@
         }
 
         .download-btn {
-            /* Ruimte alleen voor desktop vergroot naar 40px */
             margin-top: 40px; 
             padding: 10px 25px;
             border: 1px solid #000;
@@ -134,7 +133,6 @@
             }
 
             .download-btn {
-                /* Mobiele ruimte blijft behouden voor goede pasvorm op kleine schermen */
                 margin-top: 15px;
                 margin-bottom: 30px;
             }
@@ -156,7 +154,8 @@
 
     <main>
         <img src="LandingpaginaBinnenin.png" alt="cover">
-        <a href="binnenin.pdf" class="download-btn" download>kijk binnenin</a>
+        <!-- Aangepast: opent nu in nieuw tabblad voor preview in plaats van direct downloaden -->
+        <a href="binnenin.pdf" class="download-btn" target="_blank">kijk binnenin</a>
     </main>
 
     <div id="popup-overlay">
