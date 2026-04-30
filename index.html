@@ -3,107 +3,66 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>binnenin - alma borkes</title>
-    <!-- Inladen van het Courier Prime font -->
-    <link href="https://fonts.googleapis.com/css2?family=Courier+Prime:wght@400&display=swap" rel="stylesheet">
-    
+    <title>Binnenin - Alma Borkes</title>
     <style>
+        /* Basis styling */
         body {
+            font-family: 'Courier New', Courier, monospace;
             margin: 0;
-            padding: 0;
-            font-family: 'Courier Prime', monospace;
-            background-color: white;
-            color: black;
+            padding: 20px;
             display: flex;
             flex-direction: column;
-            align-items: center;
             min-height: 100vh;
-            text-transform: lowercase; 
+            box-sizing: border-box;
         }
 
-        /* Navigatie */
         nav {
-            width: 100%;
-            padding: 30px;
             display: flex;
             justify-content: space-between;
-            box-sizing: border-box;
-            position: absolute;
-            top: 0;
-            font-size: 1.1rem;
-            z-index: 10;
+            align-items: flex-start;
+            width: 100%;
         }
 
-        .nav-left {
+        .nav-left, .nav-right {
             display: flex;
             flex-direction: column;
-            align-items: flex-start;
-        }
-
-        .subtitle {
-            /* Zelfde grootte als de rest van de nav */
-            font-size: 1.1rem; 
-            margin-top: 5px;
         }
 
         .nav-right {
-            display: flex;
-            flex-direction: column;
-            align-items: flex-end;
+            text-align: right;
         }
 
         .over-link {
             cursor: pointer;
-            text-decoration: none;
-            color: black;
-            margin-top: 5px;
-            border-bottom: 1px solid transparent;
-            transition: border-color 0.3s;
+            text-decoration: underline;
         }
 
-        .over-link:hover {
-            border-bottom: 1px solid black;
-        }
-
-        /* Midden van de pagina */
         main {
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
+            justify-content: center;
             align-items: center;
-            justify-content: flex-start; 
-            flex-grow: 1;
-            width: 100%;
             text-align: center;
         }
 
-        img {
-            max-width: 450px; 
+        main img {
+            max-width: 100%;
             height: auto;
-            margin-top: 140px; 
-            margin-bottom: 60px;
+            display: block;
+            margin: 0 auto;
         }
 
-        /* De Button */
         .download-btn {
-            padding: 12px 30px;
-            font-size: 1rem;
-            font-family: 'Courier Prime', monospace;
+            margin-top: 20px;
+            padding: 10px 20px;
+            border: 1px solid #000;
             text-decoration: none;
-            color: black;
-            background-color: white;
-            border: 1px solid black;
-            transition: all 0.3s ease;
-            cursor: pointer;
-            margin-bottom: 60px;
-            text-transform: lowercase;
+            color: #000;
+            display: inline-block;
         }
 
-        .download-btn:hover {
-            background-color: black;
-            color: white;
-        }
-
-        /* Popup Styling */
+        /* Popup styling */
         #popup-overlay {
             display: none;
             position: fixed;
@@ -111,30 +70,40 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(255, 255, 255, 0.95);
-            z-index: 100;
+            background: rgba(255, 255, 255, 0.9);
             justify-content: center;
             align-items: center;
+            z-index: 1000;
         }
 
         .popup-content {
-            background-color: white;
-            padding: 60px;
-            border: 1px solid black;
-            max-width: 600px; 
-            width: 80%;
+            max-width: 600px;
+            padding: 40px;
             position: relative;
             text-align: left;
-            line-height: 1.6;
-            text-transform: none; 
         }
 
         .close-btn {
             position: absolute;
-            top: 15px;
-            right: 20px;
+            top: 10px;
+            right: 10px;
             cursor: pointer;
-            font-size: 1.5rem;
+            font-size: 24px;
+        }
+
+        /* --- NIEUWE AANPASSINGEN VOOR MOBIEL --- */
+        @media (max-width: 600px) {
+            main img {
+                max-width: 70%; /* Maakt afbeelding kleiner zodat knop past */
+            }
+
+            .nav-right {
+                text-align: left !important; /* Lijnt je naam links uit */
+            }
+            
+            .subtitle {
+                max-width: 150px; /* Zorgt dat de subtitel niet over je naam loopt */
+            }
         }
     </style>
 </head>
@@ -161,7 +130,7 @@
             <span class="close-btn" onclick="closePopup()">&times;</span>
             <p>
                 Wat begon als doel voor mijn minor om Procreate te leren, is uitgegroeid tot <strong>'binnenin'</strong>: een werk waarin jongvolwassenen die veel te kampen hebben met angst centraal staan. Ik heb bewust gekozen voor dit thema, omdat ik hier zelf veel mee te maken heb (gehad). Door gesprekken met vrienden ontdekte ik dat dit een onderwerp is dat sterk leeft.<br><br>
-                Iedereen heeft angsten; dat is menselijk. Maar het kan zwaar wegen om in een levensfase waarin van je wordt verwacht dat je alles uitzoekt, tegelijkertijd met deze angsten te worstelen. Dit verwachtingspatroon maakt het vaak moeilijker om gevoelens bespreekbaar te maken. De uitdaging was om deze gesprekken te vertalen naar een middel voor (h)erkenning. Ik wil je graag meenemen in hun verhalen: neem maar een kijkje <strong>binnenin</strong>.
+                Iedereen heeft angsten; dat is menselijk. Maar het kan zwaar wegen om in een levensfase waarin van je wordt verwacht dat je alles uitzoekt, tegelijkertijd met deze angsten te worstelen. Dit verwachtingspatroon maakt het vaak moeilijker om gevoelens te delen. Met dit werk wil ik laten zien dat je niet alleen bent en dat deze gevoelens er mogen zijn.
             </p>
         </div>
     </div>
@@ -175,6 +144,7 @@
             document.getElementById('popup-overlay').style.display = 'none';
         }
 
+        // Sluit popup als je buiten de tekst klikt
         window.onclick = function(event) {
             let overlay = document.getElementById('popup-overlay');
             if (event.target == overlay) {
