@@ -31,17 +31,17 @@
 
         .nav-right {
             text-align: right;
-            align-items: flex-end; /* Zorgt dat de hover-lijn rechts uitlijnt */
+            align-items: flex-end;
         }
 
-        /* Styling voor 'over' met een lijntje dat precies even breed is */
+        /* Styling voor 'over' met een subtiel lijntje */
         .over-link {
             cursor: pointer;
             text-decoration: none;
-            display: inline-block; /* Cruciaal: zorgt dat de border de tekstlengte volgt */
+            display: inline-block;
             border-bottom: 1px solid transparent;
             transition: border-color 0.3s ease;
-            line-height: 1.2; /* Houdt het lijntje dicht bij de tekst */
+            line-height: 1.2;
         }
 
         .over-link:hover {
@@ -100,6 +100,7 @@
             padding: 40px;
             position: relative;
             text-align: left;
+            line-height: 1.6;
         }
 
         .close-btn {
@@ -143,7 +144,6 @@
 
     <nav>
         <div class="nav-left">
-            <!-- De komma zit hier direct achter de tekst in de div voor gelijke dikte -->
             <div class="novel-titel">binnenin,</div> 
             <div class="subtitle">over angst bij jongvolwassenen</div>
         </div>
@@ -158,12 +158,13 @@
         <a href="binnenin.pdf" class="download-btn" download>kijk binnenin</a>
     </main>
 
+    <!-- Popup met je nieuwe tekst -->
     <div id="popup-overlay">
         <div class="popup-content">
             <span class="close-btn" onclick="closePopup()">&times;</span>
             <p>
                 Wat begon als doel voor mijn minor om Procreate te leren, is uitgegroeid tot <strong>'binnenin'</strong>: een werk waarin jongvolwassenen die veel te kampen hebben met angst centraal staan. Ik heb bewust gekozen voor dit thema, omdat ik hier zelf veel mee te maken heb (gehad). Door gesprekken met vrienden ontdekte ik dat dit een onderwerp is dat sterk leeft.<br><br>
-                Iedereen heeft angsten; dat is menselijk. Maar het kan zwaar wegen om in een levensfase waarin van je wordt verwacht dat je alles uitzoekt, tegelijkertijd met deze angsten te worstelen. Dit verwachtingspatroon maakt het vaak moeilijker om gevoelens te delen. Met dit werk wilt ik laten zien dat je niet alleen bent en dat deze gevoelens er mogen zijn.
+                Iedereen heeft angsten; dat is menselijk. Maar het kan zwaar wegen om in een levensfase waarin van je wordt verwacht dat je alles uitzoekt, tegelijkertijd met deze angsten te worstelen. Dit verwachtingspatroon maakt het vaak moeilijker om gevoelens bespreekbaar te maken. De uitdaging was om deze gesprekken te vertalen naar een middel voor (h)erkenning. Ik wil je graag meenemen in hun verhalen: neem maar een kijkje <strong>binnenin</strong>.
             </p>
         </div>
     </div>
