@@ -30,7 +30,7 @@
         }
 
         .nav-right {
-            text-align: right;
+            text-align: right; /* Altijd rechts uitgelijnd op desktop */
         }
 
         .over-link {
@@ -55,7 +55,7 @@
         }
 
         .download-btn {
-            margin-top: 30px;
+            margin-top: 22px; 
             padding: 10px 25px;
             border: 1px solid #000;
             text-decoration: none;
@@ -96,31 +96,31 @@
         /* --- SPECIFIEKE AANPASSINGEN VOOR MOBIEL --- */
         @media (max-width: 600px) {
             body {
-                padding: 15px; /* Iets meer ruimte aan de randen */
+                padding: 15px;
             }
 
             .nav-right {
-                text-align: left !important; /* Forceert alles in de rechterkolom naar links */
-                align-items: flex-start;
+                text-align: right !important; /* Woorden lijnen weer rechts uit */
+                align-items: flex-end; /* Container schuift naar de rechterkant */
             }
 
             .nav-right div, .nav-right .over-link {
-                text-align: left !important;
-                width: 100%;
+                text-align: right !important;
+                width: auto;
             }
 
             main {
-                justify-content: space-around; /* Verdeelt de ruimte tussen tekst, plaatje en knop beter */
+                justify-content: center;
             }
 
             main img {
-                max-width: 90%; /* Plaatje weer groter op mobiel */
-                margin: 20px 0;
+                max-width: 90%;
+                margin: 15px 0;
             }
 
             .download-btn {
-                margin-top: 10px;
-                margin-bottom: 30px; /* Zorgt dat de knop niet tegen de onderkant van de browser plakt */
+                margin-top: 7px;
+                margin-bottom: 30px;
             }
         }
     </style>
@@ -148,7 +148,7 @@
             <span class="close-btn" onclick="closePopup()">&times;</span>
             <p>
                 Wat begon als doel voor mijn minor om Procreate te leren, is uitgegroeid tot <strong>'binnenin'</strong>: een werk waarin jongvolwassenen die veel te kampen hebben met angst centraal staan. Ik heb bewust gekozen voor dit thema, omdat ik hier zelf veel mee te maken heb (gehad). Door gesprekken met vrienden ontdekte ik dat dit een onderwerp is dat sterk leeft.<br><br>
-                Iedereen heeft angsten; dat is menselijk. Maar het kan zwaar wegen om in een levensfase waarin van je wordt verwacht dat je alles uitzoekt, tegelijkertijd met deze angsten te worstelen. Dit verwachtingspatroon maakt het vaak moeilijker om gevoelens te delen. Met dit werk wil ik laten zien dat je niet alleen bent en dat deze gevoelens er mogen zijn.
+                Iedereen heeft angsten; dat is menselijk. Maar het kan zwaar wegen om in een levensfase waarin van je wordt verwacht dat je alles uitzoekt, tegelijkertijd met deze angsten te worstelen. Dit verwachtingspatroon maakt het vaak moeilijker om gevoelens te delen. Met dit werk wilt ik laten zien dat je niet alleen bent en dat deze gevoelens er mogen zijn.
             </p>
         </div>
     </div>
