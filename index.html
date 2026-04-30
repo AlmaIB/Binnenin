@@ -36,6 +36,11 @@
             align-items: flex-end;
         }
 
+        /* Ruimte tussen de naam en de over-link */
+        .naam-rechts {
+            margin-bottom: 1.2em; /* Creëert de witregel */
+        }
+
         .over-link {
             cursor: url('cursor-zwart.png') 0 0, pointer;
             text-decoration: none;
@@ -109,7 +114,6 @@
             position: absolute;
             top: 10px;
             right: 10px;
-            /* Aangepast naar zwarte cursor */
             cursor: url('cursor-zwart.png') 0 0, pointer;
             font-size: 24px;
         }
@@ -126,11 +130,10 @@
                 align-items: flex-end;
             }
 
-            /* Mobiele popup compacter maken */
             .popup-content {
                 max-width: 85%;
                 padding: 25px;
-                font-size: 14px; /* Iets kleinere tekst voor leesbaarheid op klein scherm */
+                font-size: 14px;
             }
 
             main {
@@ -159,7 +162,7 @@
             <div class="subtitle">over angst bij jongvolwassenen</div>
         </div>
         <div class="nav-right">
-            <div>alma borkes</div>
+            <div class="naam-rechts">alma borkes</div>
             <div class="over-link" onclick="openPopup()">over</div>
         </div>
     </nav>
