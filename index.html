@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Binnenin - Alma Borkes</title>
     <style>
-        /* Basis styling */
+        /* Basis styling voor desktop */
         body {
             font-family: 'Courier New', Courier, monospace;
             margin: 0;
@@ -14,6 +14,7 @@
             flex-direction: column;
             min-height: 100vh;
             box-sizing: border-box;
+            background-color: #fff;
         }
 
         nav {
@@ -44,22 +45,23 @@
             justify-content: center;
             align-items: center;
             text-align: center;
+            padding: 20px 0;
         }
 
         main img {
             max-width: 100%;
             height: auto;
             display: block;
-            margin: 0 auto;
         }
 
         .download-btn {
-            margin-top: 20px;
-            padding: 10px 20px;
+            margin-top: 30px;
+            padding: 10px 25px;
             border: 1px solid #000;
             text-decoration: none;
             color: #000;
             display: inline-block;
+            background: white;
         }
 
         /* Popup styling */
@@ -70,7 +72,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(255, 255, 255, 0.9);
+            background: rgba(255, 255, 255, 0.95);
             justify-content: center;
             align-items: center;
             z-index: 1000;
@@ -91,18 +93,34 @@
             font-size: 24px;
         }
 
-        /* --- NIEUWE AANPASSINGEN VOOR MOBIEL --- */
+        /* --- SPECIFIEKE AANPASSINGEN VOOR MOBIEL --- */
         @media (max-width: 600px) {
-            main img {
-                max-width: 70%; /* Maakt afbeelding kleiner zodat knop past */
+            body {
+                padding: 15px; /* Iets meer ruimte aan de randen */
             }
 
             .nav-right {
-                text-align: left !important; /* Lijnt je naam links uit */
+                text-align: left !important; /* Forceert alles in de rechterkolom naar links */
+                align-items: flex-start;
             }
-            
-            .subtitle {
-                max-width: 150px; /* Zorgt dat de subtitel niet over je naam loopt */
+
+            .nav-right div, .nav-right .over-link {
+                text-align: left !important;
+                width: 100%;
+            }
+
+            main {
+                justify-content: space-around; /* Verdeelt de ruimte tussen tekst, plaatje en knop beter */
+            }
+
+            main img {
+                max-width: 90%; /* Plaatje weer groter op mobiel */
+                margin: 20px 0;
+            }
+
+            .download-btn {
+                margin-top: 10px;
+                margin-bottom: 30px; /* Zorgt dat de knop niet tegen de onderkant van de browser plakt */
             }
         }
     </style>
@@ -144,7 +162,6 @@
             document.getElementById('popup-overlay').style.display = 'none';
         }
 
-        // Sluit popup als je buiten de tekst klikt
         window.onclick = function(event) {
             let overlay = document.getElementById('popup-overlay');
             if (event.target == overlay) {
