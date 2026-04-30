@@ -15,7 +15,7 @@
             min-height: 100vh;
             box-sizing: border-box;
             background-color: #fff;
-            /* Eigen zwarte cursor instellen */
+            /* Standaard zwarte cursor */
             cursor: url('cursor-zwart.png') 0 0, auto;
         }
 
@@ -38,8 +38,8 @@
         }
 
         .over-link {
-            /* Eigen witte cursor voor links */
-            cursor: url('cursor-wit.png') 0 0, pointer;
+            /* Aangepast: blijft zwart over het woord 'over' */
+            cursor: url('cursor-zwart.png') 0 0, pointer;
             text-decoration: none;
             display: inline-block;
             border-bottom: 1px solid transparent;
@@ -77,7 +77,7 @@
             display: inline-block;
             background-color: white;
             transition: background-color 0.3s ease, color 0.3s ease;
-            /* Eigen witte cursor voor de button */
+            /* Witte cursor specifiek voor de button */
             cursor: url('cursor-wit.png') 0 0, pointer;
         }
 
@@ -112,6 +112,7 @@
             position: absolute;
             top: 10px;
             right: 10px;
+            /* De sluitknop mag wel wit blijven (optioneel, pas aan naar zwart indien gewenst) */
             cursor: url('cursor-wit.png') 0 0, pointer;
             font-size: 24px;
         }
@@ -120,7 +121,7 @@
         @media (max-width: 600px) {
             body {
                 padding: 15px;
-                cursor: auto; /* Custom cursors werken niet op touchscreens */
+                cursor: auto;
             }
 
             .nav-right {
