@@ -15,8 +15,8 @@
             min-height: 100vh;
             box-sizing: border-box;
             background-color: #fff;
-            /* Zwarte cursor toevoegen */
-            cursor: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 20 20"><path d="M0 0l16 11-7 1.5L13 19l-3 1.5-4-6.5-3 3V0z" fill="black"/></svg>'), auto;
+            /* Eigen zwarte cursor instellen */
+            cursor: url('cursor-zwart.png') 0 0, auto;
         }
 
         nav {
@@ -38,7 +38,8 @@
         }
 
         .over-link {
-            cursor: pointer; /* Behoud het handje voor klikbare items */
+            /* Eigen witte cursor voor links */
+            cursor: url('cursor-wit.png') 0 0, pointer;
             text-decoration: none;
             display: inline-block;
             border-bottom: 1px solid transparent;
@@ -76,7 +77,8 @@
             display: inline-block;
             background-color: white;
             transition: background-color 0.3s ease, color 0.3s ease;
-            cursor: pointer;
+            /* Eigen witte cursor voor de button */
+            cursor: url('cursor-wit.png') 0 0, pointer;
         }
 
         .download-btn:hover {
@@ -110,7 +112,7 @@
             position: absolute;
             top: 10px;
             right: 10px;
-            cursor: pointer;
+            cursor: url('cursor-wit.png') 0 0, pointer;
             font-size: 24px;
         }
 
@@ -118,7 +120,7 @@
         @media (max-width: 600px) {
             body {
                 padding: 15px;
-                cursor: auto; /* Op mobiel is een aangepaste cursor niet nodig/mogelijk */
+                cursor: auto; /* Custom cursors werken niet op touchscreens */
             }
 
             .nav-right {
