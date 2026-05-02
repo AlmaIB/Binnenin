@@ -15,8 +15,9 @@
             min-height: 100vh;
             box-sizing: border-box;
             background-color: #fff;
+            /* Eigen zwarte cursor */
             cursor: url('cursor-zwart.png') 0 0, auto;
-            overflow-x: hidden; /* Voorkom scrollbars door de bewegende afbeelding */
+            overflow-x: hidden; 
         }
 
         nav {
@@ -25,7 +26,7 @@
             align-items: flex-start;
             width: 100%;
             font-weight: normal; 
-            z-index: 10; /* Zorg dat nav boven de afbeelding blijft */
+            z-index: 10;
         }
 
         .nav-left, .nav-right {
@@ -39,7 +40,7 @@
         }
 
         .naam-rechts {
-            margin-bottom: 1.2em; 
+            margin-bottom: 1.2em; /* De gewenste witregel */
         }
 
         .over-link {
@@ -65,13 +66,13 @@
             padding: 20px 0;
         }
 
-        /* De afbeelding krijgt een transitie voor soepele beweging */
+        /* De afbeelding met soepele overgang */
         #moving-img {
             width: 450px;
             max-width: 100%;
             height: auto;
             display: block;
-            transition: transform 0.1s ease-out; /* Maakt de beweging vloeiend */
+            transition: transform 0.2s ease-out; /* Iets tragere transitie voor meer rust */
             will-change: transform;
         }
 
@@ -84,6 +85,7 @@
             display: inline-block;
             background-color: white;
             transition: background-color 0.3s ease, color 0.3s ease;
+            /* Witte cursor specifiek voor de button */
             cursor: url('cursor-wit.png') 0 0, pointer;
             z-index: 10;
         }
@@ -139,7 +141,12 @@
             main img {
                 width: 90%;
                 margin: 5px 0 15px 0; 
-                transform: none !important; /* Zet beweging uit op mobiel */
+                transform: none !important; /* Geen beweging op mobiel */
+            }
+
+            .download-btn {
+                margin-top: 45px;
+                margin-bottom: 30px;
             }
         }
     </style>
@@ -173,12 +180,13 @@
     </div>
 
     <script>
-        // Functie voor de meebewegende afbeelding
+        // Zeer subtiel meebewegen van de afbeelding
         document.addEventListener('mousemove', (e) => {
             const img = document.getElementById('moving-img');
-            if (window.innerWidth > 600) { // Alleen op desktop
-                const moveX = (e.clientX - window.innerWidth / 2) / 40; // Hoe groter het getal (40), hoe subtieler de beweging
-                const moveY = (e.clientY - window.innerHeight / 2) / 40;
+            if (window.innerWidth > 600) { 
+                // Gedeeld door 120 voor een minimale verschuiving
+                const moveX = (e.clientX - window.innerWidth / 2) / 120; 
+                const moveY = (e.clientY - window.innerHeight / 2) / 120;
 
                 img.style.transform = `translate(${moveX}px, ${moveY}px)`;
             }
